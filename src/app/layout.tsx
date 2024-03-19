@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/Components/ThemeProvider";
 import { Toaster } from "@/Components/ui/sonner";
+import { Navbar } from "@/Components/Navbar";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -25,6 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
           <Toaster
             position="top-right"
