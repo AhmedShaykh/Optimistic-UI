@@ -1,5 +1,6 @@
 "use server";
 import { createTodo, updateTodo } from "@/lib/todos";
+import { FormDataSchema } from "@/lib/zodSchema";
 import { revalidatePath } from "next/cache";
 
 export async function createTodoAction(title: string) {
@@ -35,5 +36,20 @@ export async function updateTodoAction(id: string, isCompleted: boolean) {
         revalidatePath("/");
 
     }
+
+};
+
+export async function addFormEntry(state: any, data: FormData) {
+
+    const result = FormDataSchema.safeParse({
+        name: data.get("name"),
+        message: data.get("message")
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    if (result.success) return { data: result.data };
+
+    if (result.error) return { error: result.error.format() };
 
 };

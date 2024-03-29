@@ -1,13 +1,11 @@
 import { ThemeProvider } from "@/Components/ThemeProvider";
 import { Toaster } from "@/Components/ui/sonner";
-import { Navbar } from "@/Components/Navbar";
 import { Inter } from "next/font/google";
-import type { Metadata } from "next";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Optimistic UI",
   description: "Next.JS Optimistic UI"
 };
@@ -26,7 +24,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
           <Toaster
             position="top-right"
