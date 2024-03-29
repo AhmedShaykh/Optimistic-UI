@@ -1,5 +1,6 @@
-import Form from "@/Components/Form";
+import MailForm from "@/Components/MailForm";
 import Todos from "@/Components/Todos";
+import Form from "@/Components/Form";
 import { getTodos } from "@/lib/todos";
 
 const Home = async () => {
@@ -22,6 +23,10 @@ const Home = async () => {
                 </h1>
 
                 <Form />
+            </div>
+
+            <div className="container md:max-w-4xl">
+                <MailForm />
             </div>
         </div>
     )

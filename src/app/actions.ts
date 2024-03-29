@@ -1,6 +1,7 @@
 "use server";
 import { createTodo, updateTodo } from "@/lib/todos";
 import { FormDataSchema } from "@/lib/zodSchema";
+import { schema } from "@/lib/formSchema";
 import { revalidatePath } from "next/cache";
 
 export async function createTodoAction(title: string) {
@@ -53,3 +54,47 @@ export async function addFormEntry(state: any, data: FormData) {
     if (result.error) return { error: result.error.format() };
 
 };
+
+export type FormState = {
+    message: string;
+    fields?: Record<string, string>;
+    issues?: string[];
+};
+
+export async function onSubmitAction(
+    prevState: FormState,
+    data: FormData
+): Promise<FormState> {
+
+    const formData = Object.fromEntries(data);
+
+    const parsed = schema.safeParse(formData);
+
+    if (!parsed.success) {
+
+        const fields: Record<string, string> = {};
+
+        for (const key of Object.keys(formData)) {
+            fields[key] = formData[key].toString();
+        };
+
+        return {
+            message: "Invalid Form Fata",
+            fields,
+            issues: parsed.error.issues.map((issue) => issue.message)
+        };
+
+    }
+
+    if (parsed.data.email.includes("x")) {
+
+        return {
+            message: "Invalid Email",
+            fields: parsed.data
+        };
+
+    }
+
+    return { message: "User Registered" };
+
+}
