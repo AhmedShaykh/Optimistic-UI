@@ -79,7 +79,7 @@ export async function onSubmitAction(
         };
 
         return {
-            message: "Invalid Form Fata",
+            message: "Invalid Form Data",
             fields,
             issues: parsed.error.issues.map((issue) => issue.message)
         };
@@ -97,4 +97,4 @@ export async function onSubmitAction(
 
     return { message: "User Registered" };
 
-}
+};

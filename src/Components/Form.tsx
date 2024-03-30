@@ -29,7 +29,9 @@ const Form = () => {
             </form>
 
             <div className="flex-1 rounded-lg bg-cyan-600 p-8 text-white">
-                <pre>{JSON.stringify(state, null, 2)}</pre>
+                <pre>
+                    {JSON.stringify(state, null, 2)}
+                </pre>
             </div>
         </div>
     )

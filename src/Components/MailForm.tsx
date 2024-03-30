@@ -80,7 +80,7 @@ const MailForm = () => {
                                 <FormControl>
                                     <Input placeholder="Enter First Name" {...field} />
                                 </FormControl>
-                                <FormDescription>Your First Name.</FormDescription>
+                                <FormDescription>Your First Name</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -95,7 +95,7 @@ const MailForm = () => {
                                 <FormControl>
                                     <Input placeholder="Enter Last Name " {...field} />
                                 </FormControl>
-                                <FormDescription>Your Last Name.</FormDescription>
+                                <FormDescription>Your Last Name</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -110,7 +110,7 @@ const MailForm = () => {
                                 <FormControl>
                                     <Input placeholder="Enter Email Address" {...field} />
                                 </FormControl>
-                                <FormDescription>Your Email Address.</FormDescription>
+                                <FormDescription>Your Email Address</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}

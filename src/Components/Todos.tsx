@@ -15,7 +15,7 @@ const Todos = ({ todos }: any) => {
     const [optimisticTodos, addOptimisticTodo] = useOptimistic(
         todos,
         (state, newTodo: Todo) => {
-            return [...state, newTodo]
+            return [...state, newTodo];
         }
     );
 
@@ -48,11 +48,16 @@ const Todos = ({ todos }: any) => {
     return (
         <div>
             <form
-                ref={formRef}
-                action={action}
                 className="flex"
+                action={action}
+                ref={formRef}
             >
-                <Input type="text" name="title" placeholder="Add A New Todo" />
+                <Input
+                    placeholder="Add A New Todo"
+                    name="title"
+                    type="text"
+                />
+
                 <SubmitButton />
             </form>
 
@@ -77,8 +82,12 @@ function SubmitButton() {
     const { pending } = useFormStatus();
 
     return (
-        <Button type="submit" className="ml-2" disabled={pending}>
-            Add Todo
+        <Button
+            className="ml-2 font-semibold"
+            disabled={pending}
+            type="submit"
+        >
+            {pending ? "Loading..." : "Add Todo"}
         </Button>
     )
 };

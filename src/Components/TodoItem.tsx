@@ -14,10 +14,17 @@ const TodoItem = ({ todo }: any) => {
         todo,
         (
             todo,
-            { isCompleted, updatedAt }: { isCompleted: boolean; updatedAt: Date }
+            { isCompleted, updatedAt }: {
+                isCompleted: boolean;
+                updatedAt: Date
+            }
+
         ) => {
-            return { ...todo, isCompleted, updatedAt }
+
+            return { ...todo, isCompleted, updatedAt };
+
         }
+
     );
 
     async function handleChange(isCompleted: boolean) {
