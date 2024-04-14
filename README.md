@@ -1,1 +1,1 @@
-# Next.JS Optimistic UI!
+# Next.JS Optimistic UI & Admin Dashboard!

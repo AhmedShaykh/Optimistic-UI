@@ -1,7 +1,9 @@
+import { Button } from "@/Components/ui/button";
 import MailForm from "@/Components/MailForm";
 import Todos from "@/Components/Todos";
 import Form from "@/Components/Form";
 import { getTodos } from "@/lib/todos";
+import Link from "next/link";
 
 const Home = async () => {
 
@@ -28,6 +30,14 @@ const Home = async () => {
             <div className="container md:max-w-4xl">
                 <MailForm />
             </div>
+
+            <Link
+                href={"/dashboard"}
+            >
+                <Button className="px-5 py-6 text-lg font-bold">
+                    Dashboard
+                </Button>
+            </Link>
         </div>
     )
 };
