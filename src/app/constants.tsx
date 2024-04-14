@@ -22,22 +22,22 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         menuList: [
             {
                 title: "Products",
-                path: "/products",
+                path: "/dashboard",
                 icon: <BsKanban size={20} />,
                 submenu: true,
                 subMenuItems: [
-                    { title: "All", path: "/products" },
-                    { title: "New", path: "/products/new" },
+                    { title: "All", path: "/dashboard" },
+                    { title: "New", path: "/dashboard" },
                 ],
             },
             {
                 title: "Orders",
-                path: "/orders",
+                path: "/dashboard",
                 icon: <BsListUl size={20} />,
             },
             {
                 title: "Feedbacks",
-                path: "/feedbacks",
+                path: "/dashboard",
                 icon: <BsEnvelope size={20} />,
             }
         ]
@@ -47,12 +47,12 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         menuList: [
             {
                 title: "Account",
-                path: "/account",
+                path: "/dashboard",
                 icon: <BsGear size={20} />,
             },
             {
                 title: "Help",
-                path: "/help",
+                path: "/dashboard",
                 icon: <BsQuestionCircle size={20} />,
             }
         ]

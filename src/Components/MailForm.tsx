@@ -116,7 +116,9 @@ const MailForm = () => {
                         )}
                     />
 
-                    <Button type="submit">Submit</Button>
+                    <Button className="font-bold" type="submit">
+                        Submit
+                    </Button>
                 </form>
             </Form>
         </>

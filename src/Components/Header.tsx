@@ -13,8 +13,8 @@ const Header = () => {
         invokeToggleCollapse();
     };
 
-    const headerStyle = classNames("bg-sidebar fixed w-full z-[99997] px-4 shadow-sm shadow-slate-500/40", {
-        ["sm:pl-[20rem]"]: !toggleCollapse,
+    const headerStyle = classNames("bg-white dark:bg-[#0A0A0A] fixed w-full z-[99997] px-4 shadow-sm shadow-slate-500/40", {
+        ["sm:pl-[16rem]"]: !toggleCollapse,
         ["sm:pl-[5.6rem]"]: toggleCollapse,
     });
 
